@@ -171,11 +171,10 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USES_MKE2FS := true
 
 # Sepolicy
-#include device/qcom/sepolicy/SEPolicy.mk
-SELINUX_IGNORE_NEVERALLOWS=true
+include device/qcom/sepolicy/SEPolicy.mk
 
-#BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
-#BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
