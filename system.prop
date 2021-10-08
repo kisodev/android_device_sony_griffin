@@ -88,3 +88,7 @@ ro.hardware.vulkan=adreno
 graphics.gpu.profiler.support=true
 renderthread.skia.reduceopstasksplitting=true
 debug.hwui.renderer=skiavk
+# Gamut
+ro.sys.colorgamut.supported=true
+#persist.sys.colorgamut.mode=3
+#persist.sys.touch.glove_mode=0
