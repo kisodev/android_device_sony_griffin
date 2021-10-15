@@ -170,6 +170,10 @@ PRODUCT_COPY_FILES += \
 #PRODUCT_PACKAGES += \
     RemovePackages
 
+# Shims
+PRODUCT_PACKAGES += \
+    lib-imsvtshim
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
