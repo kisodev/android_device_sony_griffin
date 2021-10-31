@@ -8,7 +8,7 @@
 
 set -e
 
-DEVICE_COMMON=bahamut
+DEVICE_COMMON=griffin
 VENDOR=sony
 
 # Load extract_utils and do some sanity checks

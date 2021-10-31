@@ -14,23 +14,25 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/sony/bahamut
+DEVICE_PATH := device/sony/griffin
 
 BOARD_VENDOR := sony
 
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := J9260,J9210,J8270,J8210,bahamut,bahamut_dual
+#TARGET_OTA_ASSERT_DEVICE := J9260,J9210,J8270,J8210,bahamut,bahamut_dual
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 2520
-TARGET_SCREEN_WIDTH := 1080
+TARGET_SCREEN_HEIGHT := 2560
+TARGET_SCREEN_WIDTH := 1440
 
 # Display
-TARGET_SCREEN_DENSITY := 420
+TARGET_SCREEN_DENSITY := 417
 
 # Architecture
 TARGET_ARCH := arm64
@@ -58,13 +60,14 @@ TARGET_BOARD_PLATFORM := msmnile
 
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 2
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=2048 loop.max_part=16 androidboot.usbcontroller=a600000.dwc3 buildproduct=bahamut_dsds buildid=KUMANO-1.2.0-210818-1151 panic_on_err=1
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=2048 loop.max_part=16 androidboot.usbcontroller=a600000.dwc3 buildproduct=griffin_dsds buildid=KUMANO-1.2.0-210427-1148 panic_on_err=1
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_RAMDISK_OFFSET     := 0x01000000
 BOARD_DTB_OFFSET         := 0x01f00000
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_ADDITIONAL_FLAGS := DTC_EXT=$(shell pwd)/prebuilts/misc/linux-x86/dtc/dtc
 BOARD_KERNEL_SEPARATED_DTBO := true
@@ -75,7 +78,7 @@ TARGET_KERNEL_HEADERS := kernel/sony/sm8150
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CONFIG := vendor/bahamut_defconfig
 TARGET_FORCE_PREBUILT_KERNEL := true
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
 BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt/dtb
 
@@ -169,15 +172,19 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USES_MKE2FS := true
 
 # Sepolicy
-include device/qcom/sepolicy/SEPolicy.mk
+#include device/qcom/sepolicy/SEPolicy.mk
+SELINUX_IGNORE_NEVERALLOWS=true
 
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
-BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+#BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
+#BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 2
 
+AVB_VENDOR_DLKM_HASHTREE_ENABLE := false
+AVB_ODM_DLMK_HASHTREE_ENABLE := false
+
 # Inherit from the proprietary version
--include vendor/sony/bahamut/BoardConfigVendor.mk
+-include vendor/sony/griffin/BoardConfigVendor.mk

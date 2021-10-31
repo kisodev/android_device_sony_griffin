@@ -8,7 +8,7 @@
 
 set -e
 
-DEVICE_COMMON=bahamut
+DEVICE_COMMON=griffin
 VENDOR=sony
 
 # Load extract_utils and do some sanity checks
@@ -28,7 +28,7 @@ source "${HELPER}"
 setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
 
 # Warning headers and guards
-write_headers "bahamut"
+write_headers "griffin"
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true

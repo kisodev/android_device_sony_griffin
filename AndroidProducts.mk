@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_bahamut.mk
+    $(LOCAL_DIR)/arrow_griffin.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_bahamut-user \
-    lineage_bahamut-userdebug \
-    lineage_bahamut-eng
+    arrow_griffin-user \
+    arrow_griffin-userdebug \
+    arrow_griffin-eng
