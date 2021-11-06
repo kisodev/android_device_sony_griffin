@@ -118,6 +118,8 @@ PRODUCT_COPY_FILES += \
 # Display
 PRODUCT_PACKAGES += \
     libdisplayconfig.qti \
+    libqdMetaData \
+    libqdMetaData.system \
     libdisplayconfig.system.qti \
     libvulkan \
     vendor.display.config@1.0 \
