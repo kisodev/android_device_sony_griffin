@@ -194,7 +194,7 @@ PRODUCT_PACKAGES += \
     qti_telephony_hidl_wrapper_prd.xml \
     telephony-ext
 
-#PRODUCT_BOOT_JARS += \
+PRODUCT_BOOT_JARS += \
     telephony-ext
 
 PRODUCT_COPY_FILES += \
@@ -205,7 +205,7 @@ PRODUCT_COPY_FILES += \
     lineage.trust@1.0-service
 
 # Tethering
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     TetheringConfigOverlay
 
 # Update engine
