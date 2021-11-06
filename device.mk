@@ -101,6 +101,10 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     Snap
 
+# ExtendedSettings
+PRODUCT_PACKAGES += \
+    ExtendedSettings
+
 # Common init scripts
 PRODUCT_PACKAGES += \
     init.qcom.rc \
@@ -118,7 +122,8 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system \
     libvulkan \
     vendor.display.config@1.0 \
-    vendor.display.config@2.0
+    vendor.display.config@2.0 \
+    libjson
 
 # fastbootd
 PRODUCT_PACKAGES += \
