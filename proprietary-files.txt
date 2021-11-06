@@ -218,21 +218,3 @@ system_ext/lib64/libwfduibcsinkinterface.so
 system_ext/lib64/libwfduibcsrc.so
 system_ext/lib64/libwfduibcsrcinterface.so
 -system_ext/priv-app/WfdService/WfdService.apk
-
-# cacao
-lib/vendor.somc.hardware.camera.cacao@2.0.so
-lib/libcacao_process_ctrl_gateway.so
-lib/vendor.somc.hardware.camera.cacao@1.0.so
-lib/libcacao_service.so
-lib/vendor.somc.hardware.camera.provider@1.0.so
-lib/vendor.somc.hardware.camera.cacao@3.2.so
-lib/libimageprocessorjni.so
-lib/vendor.somc.hardware.camera.cacao@3.1.so
-lib/libcacao_pal.so
-lib/vendor.somc.hardware.camera.cacao@3.0.so
-lib/libcacao_client.so
-lib64/libimageprocessorjni.so
-lib64/libcacao_pal.so
-lib64/libcacao_client.so
-bin/cacaoserver
-etc/init/cacaoserver.rc
