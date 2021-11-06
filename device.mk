@@ -120,6 +120,7 @@ PRODUCT_PACKAGES += \
     libdisplayconfig.qti \
     libqdMetaData \
     libqdMetaData.system \
+    libdisplayconfig.system.qti \
     libvulkan \
     vendor.display.config@1.0 \
     vendor.display.config@2.0 \
