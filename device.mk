@@ -118,9 +118,10 @@ PRODUCT_COPY_FILES += \
 # Display
 PRODUCT_PACKAGES += \
     libdisplayconfig.qti \
+    libdisplayconfig.qti.vendor \
     libqdMetaData \
     libqdMetaData.system \
-    libdisplayconfig.system.qti \
+    libqdMetaData.vendor \
     libvulkan \
     vendor.display.config@1.0 \
     vendor.display.config@2.0 \
@@ -133,7 +134,8 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_PACKAGES += \
     libhidltransport \
-    libhwbinder
+    libhwbinder \
+    libqti_vndfwk_detect
 
 # Input
 PRODUCT_COPY_FILES += \
@@ -205,6 +207,15 @@ PRODUCT_COPY_FILES += \
 # Trust HAL
 #PRODUCT_PACKAGES += \
     lineage.trust@1.0-service
+
+# HIDL
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0 \
+    android.hidl.base@1.0_system \
+    android.hidl.manager@1.0 \
+    android.hidl.manager@1.0_system \
+    libhidltransport \
+    libhwbinder
 
 # Tethering
 PRODUCT_PACKAGES += \

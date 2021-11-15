@@ -9,7 +9,6 @@ LOCAL_PACKAGE_NAME := ExtendedSettings
 LOCAL_CERTIFICATE := platform
 LOCAL_PRIVATE_PLATFORM_APIS := true
 LOCAL_PRIVILEGED_MODULE := true
-#LOCAL_PROPRIETARY_MODULE := true
 
 LOCAL_USE_AAPT2 := true
 
@@ -21,12 +20,21 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
     android-support-v13 \
     android-support-v14-preference
 
+LOCAL_STATIC_ANDROID_LIBRARIES := \
+    androidx.core_core \
+    androidx.preference_preference
+
+
 LOCAL_RESOURCE_DIR := \
     $(LOCAL_PATH)/res
 
 LOCAL_PROGUARD_FLAG_FILES := proguard-rules.pro
+LOCAL_PROGUARD_ENABLED := disabled
+LOCAL_DEX_PREOPT := false
 
 include $(BUILD_PACKAGE)
+
+include frameworks/base/packages/SettingsLib/common.mk
 
 # Use the following include to make our test apk.
 ifeq (,$(ONE_SHOT_MAKEFILE))
