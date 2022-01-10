@@ -28,7 +28,7 @@ $(call inherit-product, vendor/sony/griffin/griffin-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay 
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
@@ -101,10 +101,6 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     Snap
 
-# ExtendedSettings
-PRODUCT_PACKAGES += \
-    ExtendedSettings
-
 # Common init scripts
 PRODUCT_PACKAGES += \
     init.qcom.rc \
@@ -118,14 +114,19 @@ PRODUCT_COPY_FILES += \
 # Display
 PRODUCT_PACKAGES += \
     libdisplayconfig.qti \
-    libdisplayconfig.qti.vendor \
+    libqdutils \
     libqdMetaData \
     libqdMetaData.system \
-    libqdMetaData.vendor \
     libvulkan \
     vendor.display.config@1.0 \
     vendor.display.config@2.0 \
-    libjson
+
+
+# AOSP Packages
+PRODUCT_PACKAGES += \
+    libion \
+    libjson \
+    libxml2 
 
 # fastbootd
 PRODUCT_PACKAGES += \
@@ -140,10 +141,6 @@ PRODUCT_PACKAGES += \
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/gpio-keys.kl
-
-# Livedisplay
-#PRODUCT_PACKAGES += \
-    lineage.livedisplay@2.0-service-sdm
 
 # QTI Bluetooth
 PRODUCT_PACKAGES += \
@@ -179,7 +176,7 @@ PRODUCT_COPY_FILES += \
     RemovePackages
 
 # Shims
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     lib-imsvtshim
 
 # Soong namespaces
@@ -194,8 +191,6 @@ PRODUCT_PACKAGES += \
     qti_telephony_hidl_wrapper.xml \
     qti-telephony-utils \
     qti_telephony_utils.xml \
-    qti-telephony-hidl-wrapper-prd \
-    qti_telephony_hidl_wrapper_prd.xml \
     telephony-ext
 
 PRODUCT_BOOT_JARS += \
@@ -203,10 +198,6 @@ PRODUCT_BOOT_JARS += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-qti.xml
-
-# Trust HAL
-#PRODUCT_PACKAGES += \
-    lineage.trust@1.0-service
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -243,3 +234,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-wfd.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-wfd.xml
+
+# Display Device Config
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/display_id_0.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/displayconfig/display_id_0.xml

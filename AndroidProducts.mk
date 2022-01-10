@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/arrow_griffin.mk
+    $(LOCAL_DIR)/aosp_griffin.mk
 
 COMMON_LUNCH_CHOICES := \
-    arrow_griffin-user \
-    arrow_griffin-userdebug \
-    arrow_griffin-eng
+    aosp_griffin-user \
+    aosp_griffin-userdebug \
+    aosp_griffin-eng
