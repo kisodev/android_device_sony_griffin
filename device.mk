@@ -102,7 +102,6 @@ PRODUCT_PACKAGES += \
     Snap
 
 PRODUCT_PACKAGES += \
-    SemcCameraUI \
     SomcColorGamut \
     DisplayBooster \
     SwiqiSystemService

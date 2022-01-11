@@ -13,6 +13,7 @@
         <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
         <permission name="android.permission.WRITE_EMBEDDED_SUBSCRIPTIONS"/>
         <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.WRITE_DEVICE_CONFIG"/>
     </privapp-permissions>
     <privapp-permissions package="com.verizon.obdm">
         <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
