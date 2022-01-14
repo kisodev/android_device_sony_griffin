@@ -284,10 +284,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Sony specific settings
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-sony.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-sony.xml
-
-#PE
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/priv-permissions-pe.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-pe.xml \
-    $(LOCAL_PATH)/configs/priv-permissions-pe.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-pe.xml \
-    $(LOCAL_PATH)/configs/privapp-permissions-pe-systemext.xml:$(TARGET_COPY_OUT_SYSTEM)/system_ext/etc/permissions/privapp-permissions-pe.xml \
-
