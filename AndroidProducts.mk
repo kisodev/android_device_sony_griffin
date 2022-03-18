@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_griffin.mk
+    $(LOCAL_DIR)/evolution_griffin.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_griffin-user \
-    aosp_griffin-userdebug \
-    aosp_griffin-eng
+    evolution_griffin-user \
+    evolution_griffin-userdebug \
+    evolution_griffin-eng

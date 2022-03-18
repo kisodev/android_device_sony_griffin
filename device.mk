@@ -48,7 +48,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.telephony.cdma.xml \
-    frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.sip.voip.xml
+    frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.sip.voip.xml \
+    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml 
 
 # A/B
 AB_OTA_UPDATER := true
@@ -101,7 +102,7 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     Snap
 
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     SomcColorGamut \
     DisplayBooster \
     SwiqiSystemService
@@ -149,7 +150,10 @@ PRODUCT_COPY_FILES += \
 
 # QTI Bluetooth
 PRODUCT_PACKAGES += \
-    BluetoothQti
+    audio.bluetooth.default \
+    android.hardware.bluetooth@1.0 \
+    android.hardware.bluetooth@1.1 \
+    android.hardware.bluetooth.audio@2.1-impl \
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -232,6 +236,9 @@ PRODUCT_PACKAGES += \
 
 #PRODUCT_BOOT_JARS += \
     WfdCommon
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.2 \
+    android.hardware.power-service-qti
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-wfd.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-wfd.xml

@@ -20,7 +20,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
 # Inherit some common Lineage stuff
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
 
 # Inherit from common.mk
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
@@ -28,7 +28,7 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 PRODUCT_BRAND := Sony
 PRODUCT_DEVICE := griffin
 PRODUCT_MANUFACTURER := Sony
-PRODUCT_NAME := aosp_griffin
+PRODUCT_NAME := evolution_griffin
 PRODUCT_MODEL := Xperia 1
 
 PRODUCT_GMS_CLIENTID_BASE := android-sonymobile
@@ -39,3 +39,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="J9110_CN-user 11 55.2.A.4.154 055002A004015404257406098 release-keys"
 
 BUILD_FINGERPRINT := Sony/J9110_CN/J9110:11/55.2.A.4.154/055002A004015404257406098:user/release-keys
+
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_BOOT_ANIMATION_RES := 1440
