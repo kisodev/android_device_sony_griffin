@@ -49,7 +49,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.telephony.cdma.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.sip.voip.xml \
-    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml 
+    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/usb_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/bluetooth_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/r_submix_audio_policy_configuration.xml
 
 # A/B
 AB_OTA_UPDATER := true
@@ -123,9 +125,10 @@ PRODUCT_PACKAGES += \
     libqdutils \
     libqdMetaData \
     libqdMetaData.system \
+    libdisplayconfig.system.qti \
     libvulkan \
     vendor.display.config@1.0 \
-    vendor.display.config@2.0 \
+    vendor.display.config@2.0 
 
 
 # AOSP Packages
@@ -245,7 +248,7 @@ PRODUCT_COPY_FILES += \
 
 # Display Device Config
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/display_id_0.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/displayconfig/display_id_0.xml
+    $(LOCAL_PATH)/configs/display_id_0.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/displayconfig/display_id_0.xml
 
 
 # Display
