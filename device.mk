@@ -151,6 +151,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/gpio-keys.kl
 
+# Livedisplay
+PRODUCT_PACKAGES += \
+    lineage.livedisplay@2.0-service-sdm
+
 # QTI Bluetooth
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
@@ -193,6 +197,10 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Telephony
 PRODUCT_PACKAGES += \
+    extphonelib \
+    extphonelib-product \
+    extphonelib.xml \
+    extphonelib_product.xml \
     ims-ext-common \
     ims_ext_common.xml \
     qti-telephony-hidl-wrapper \
@@ -248,7 +256,7 @@ PRODUCT_COPY_FILES += \
 
 # Display Device Config
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/display_id_0.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/displayconfig/display_id_0.xml
+    $(LOCAL_PATH)/configs/display_id_0.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/displayconfig/display_id_0.xml
 
 
 # Display
