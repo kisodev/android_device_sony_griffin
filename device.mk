@@ -245,6 +245,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libnl
 
+# WiFi Display
+PRODUCT_PACKAGES += \
+    Doze 
 #PRODUCT_BOOT_JARS += \
     WfdCommon
 PRODUCT_PACKAGES += \
