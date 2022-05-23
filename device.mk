@@ -26,6 +26,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/sony/griffin/griffin-vendor.mk)
 
+# Setup dalvik vm configs
+$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay 
@@ -104,10 +107,12 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     Snap
 
-#PRODUCT_PACKAGES += \
+#Semc
+PRODUCT_PACKAGES += \
     SomcColorGamut \
     DisplayBooster \
-    SwiqiSystemService
+    DaxUI.apk \
+    daxService 
 
 # Common init scripts
 PRODUCT_PACKAGES += \
@@ -260,7 +265,6 @@ PRODUCT_COPY_FILES += \
 # Display Device Config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/display_id_0.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/displayconfig/display_id_0.xml
-
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
