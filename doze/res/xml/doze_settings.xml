@@ -64,4 +64,19 @@
 
     </PreferenceCategory>
 
+    <Preference
+        android:key="color_gamut"
+        android:title="@string/color_gamut_title">
+	    <intent android:targetPackage="com.sonymobile.colorgamut" android:targetClass="com.sonymobile.colorgamut.ColorGamutSettingActivity" />
+   </Preference>
+
+    <Preference
+        android:key="audio_settings"
+        android:title="@string/audio_settings_title">
+           <intent android:targetPackage="com.sonyericsson.soundenhancement" android:action="android.intent.action.MAIN" android:targetClass="com.sonyericsson.soundenhancement.AudioEffectMenuActivity">
+                <extra android:name="android.media.extra.PACKAGE_NAME" android:value="com.android.settings" />
+                <extra android:name="com.sonyericsson.soundenhancement.EXTRA_START_TYPE" android:value="START_FOR_AUDIO" />
+          </intent>
+   </Preference>
+
 </PreferenceScreen>

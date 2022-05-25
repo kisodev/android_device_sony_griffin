@@ -18,4 +18,6 @@
     <!-- Message shown in fingerprint enrollment dialog to locate the sensor -->
     <string name="color_gamut_title">
         图像质量设定</string>
+    <string name="audio_settings_title">
+        音频设定</string>
 </resources>
