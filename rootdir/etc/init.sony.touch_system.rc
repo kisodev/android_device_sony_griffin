@@ -1,0 +1,46 @@
+# Copyright (C) 2018 Sony Mobile Communications Inc.
+# All rights, including trade secret rights, reserved.
+#
+
+# Touch
+# sod mode off (power on)
+on property:dev.bootcomplete=1 && property:sys.preactivated.smart_on_display=0
+    write /sys/devices/virtual/sec/tsp/cmd "sod_enable,0"
+    write /sys/devices/dsi_panel_driver/pre_sod_mode 0
+
+# sod mode on (power off skip)
+on property:dev.bootcomplete=1 && property:sys.preactivated.smart_on_display=1
+    write /sys/devices/virtual/sec/tsp/cmd "sod_enable,1"
+    write /sys/devices/dsi_panel_driver/pre_sod_mode 1
+
+on property:dev.bootcomplete=1 && property:sys.preactivated.smart_on_display=1 && property:sys.enable.smart_on_doze=*
+    write /sys/devices/dsi_panel_driver/sod_mode ${sys.enable.smart_on_doze}
+
+on property:dev.bootcomplete=1 && property:persist.sys.touch.cover_mode_enabled=0
+    write /sys/devices/virtual/sec/tsp/cmd "cover_mode_enable,0"
+
+on property:dev.bootcomplete=1 && property:persist.sys.touch.cover_mode_enabled=1
+    write /sys/devices/virtual/sec/tsp/cmd "cover_mode_enable,1"
+
+# sidetouch (both)
+on property:dev.bootcomplete=1 && property:persist.sys.touch.sidekey_status=0
+    write /sys/devices/virtual/sec/tsp/cmd "sidetouch_enable,0"
+
+# sidetouch (right only)
+on property:dev.bootcomplete=1 && property:persist.sys.touch.sidekey_status=1
+    write /sys/devices/virtual/sec/tsp/cmd "sidetouch_enable,1"
+
+# sidetouch (left only)
+on property:dev.bootcomplete=1 && property:persist.sys.touch.sidekey_status=2
+    write /sys/devices/virtual/sec/tsp/cmd "sidetouch_enable,2"
+
+# sidetouch (disable)
+on property:dev.bootcomplete=1 && property:persist.sys.touch.sidekey_status=3
+    write /sys/devices/virtual/sec/tsp/cmd "sidetouch_enable,3"
+
+# grip rejection
+on property:dev.bootcomplete=1 && property:sys.config_orientation=0
+    write /sys/devices/virtual/sec/tsp/cmd "orientation_change,0"
+
+on property:dev.bootcomplete=1 && property:sys.config_orientation=1
+    write /sys/devices/virtual/sec/tsp/cmd "orientation_change,1"

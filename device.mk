@@ -111,14 +111,17 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SomcColorGamut \
     DisplayBooster \
-    DaxUI.apk \
-    daxService 
+    DaxUI \
+    daxService \
+    SoundEnhancement \
+    SemcMusic 
 
 # Common init scripts
 PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.recovery.qcom.rc \
-    ueventd.qcom.rc
+    ueventd.qcom.rc \
+    init.sony.touch_system.rc
 
 # Component overrides
 PRODUCT_COPY_FILES += \
