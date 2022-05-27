@@ -99,6 +99,9 @@ BOARD_USES_QCOM_HARDWARE := true
 BUILD_WITHOUT_VENDOR := true
 TARGET_USES_VULKAN := true
 
+# Power
+TARGET_TAP_TO_WAKE_NODE := "/sys/devices/dsi_panel_driver/pre_sod_mode"
+
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
