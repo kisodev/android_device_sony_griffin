@@ -114,7 +114,9 @@ PRODUCT_PACKAGES += \
     DaxUI \
     daxService \
     SoundEnhancement \
-    SemcMusic 
+    SemcMusic \
+    SmartCharger \
+    XperiaXLoops
 
 # Common init scripts
 PRODUCT_PACKAGES += \
@@ -255,9 +257,11 @@ PRODUCT_PACKAGES += \
 
 # WiFi Display
 PRODUCT_PACKAGES += \
-    Doze 
+    Parts
+
 #PRODUCT_BOOT_JARS += \
     WfdCommon
+
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2 \
     android.hardware.power-service-qti
