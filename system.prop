@@ -94,5 +94,10 @@ persist.sony.effect.dolby_atmos=true
 # Gamut
 ro.sys.colorgamut.supported=true
 persist.sys.colorgamut.mode=1
-#persist.sys.colorgamut.mode=3
-#persist.sys.touch.glove_mode=0
+
+# Added system property for RID009076
+persist.service.automaster.mode=true
+persist.sys.colorgamut.current.mode=1
+
+# Touch
+sys.preactivated.smart_on_display=1
