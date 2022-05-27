@@ -29,5 +29,5 @@ LOCAL_MODULE       := init.sony.touch_system.rc
 LOCAL_MODULE_TAGS  := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := etc/init.sony.touch_system.rc
-LOCAL_MODULE_PATH  := $(TARGET_ROOT_ETC)/init
+LOCAL_MODULE_PATH  := $(TARGET_OUT_ETC)/init
 include $(BUILD_PREBUILT)
