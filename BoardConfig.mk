@@ -99,9 +99,6 @@ BOARD_USES_QCOM_HARDWARE := true
 BUILD_WITHOUT_VENDOR := true
 TARGET_USES_VULKAN := true
 
-# Power
-TARGET_TAP_TO_WAKE_NODE := "/sys/devices/dsi_panel_driver/pre_sod_mode"
-
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
@@ -148,8 +145,6 @@ TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # HIDL
 DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/framework_manifest.xml
-DEVICE_MATRIX_FILE += $(DEVICE_PATH)/compatibility_matrix.xml
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
