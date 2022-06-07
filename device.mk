@@ -26,12 +26,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/sony/griffin/griffin-vendor.mk)
 
-# Setup dalvik vm configs
-$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
-
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay 
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-aosp 
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
@@ -107,6 +105,10 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     Snap
 
+#Remove_Packages
+PRODUCT_PACKAGES += \
+    Remove_Packages
+
 #Semc
 PRODUCT_PACKAGES += \
     SomcColorGamut \
@@ -115,15 +117,15 @@ PRODUCT_PACKAGES += \
     daxService \
     SoundEnhancement \
     SemcMusic \
-    SmartCharger \
-    XperiaXLoops
+    SmartCharger
 
 # Common init scripts
 PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.recovery.qcom.rc \
     ueventd.qcom.rc \
-    init.sony.touch_system.rc
+    init.sony.touch_system.rc \
+    init.schedcust.rc
 
 # Component overrides
 PRODUCT_COPY_FILES += \
@@ -139,7 +141,6 @@ PRODUCT_PACKAGES += \
     libvulkan \
     vendor.display.config@1.0 \
     vendor.display.config@2.0 
-
 
 # AOSP Packages
 PRODUCT_PACKAGES += \
@@ -161,10 +162,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/gpio-keys.kl
 
-# Livedisplay
-PRODUCT_PACKAGES += \
-    lineage.livedisplay@2.0-service-sdm
-
 # QTI Bluetooth
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
@@ -183,8 +180,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
 
-# NFC
-PRODUCT_PACKAGES += \
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
@@ -255,16 +250,17 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libnl
 
+# hidl
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0 \
+    android.hidl.manager@1.0
+
 # WiFi Display
 PRODUCT_PACKAGES += \
     Parts
 
 #PRODUCT_BOOT_JARS += \
     WfdCommon
-
-PRODUCT_PACKAGES += \
-    android.hardware.power@1.2 \
-    android.hardware.power-service-qti
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-wfd.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-wfd.xml
@@ -273,46 +269,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/display_id_0.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/displayconfig/display_id_0.xml
 
-# Display
-PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.display.comp_mask=0 \
-    vendor.display.disable_excl_rect=0 \
-    vendor.display.disable_excl_rect_partial_fb=1 \
-    vendor.display.disable_hw_recovery_dump=1 \
-    vendor.display.disable_layer_stitch=0 \
-    vendor.display.disable_rotator_ubwc=1 \
-    vendor.display.disable_scaler=0 \
-    vendor.gralloc.disable_ubwc=0 \
-    vendor.display.enable_posted_start_dyn=1 \
-    vendor.display.enable_optimize_refresh=1 \
-    vendor.display.camera_noc_efficiency_factor=0.70 \
-    vendor.display.normal_noc_efficiency_factor=0.85 \
-    vendor.display.secure_preview_buffer_format=420_sp \
-    vendor.display.use_smooth_motion=1 \
-    vendor.gralloc.secure_preview_buffer_format=420_sp \
-    debug.sf.enable_advanced_sf_phase_offset=1 \
-    debug.sf.high_fps_late_sf_phase_offset_ns=-5000000 \
-    debug.sf.high_fps_early_phase_offset_ns=-5000000 \
-    debug.sf.high_fps_early_gl_phase_offset_ns=-5000000
-
-# Display - HDR/WCG
-PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.display.dataspace_saturation_matrix=1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0 \
-    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
-    ro.surface_flinger.has_HDR_display=true \
-    ro.surface_flinger.has_wide_color_display=true \
-    ro.surface_flinger.protected_contents=true \
-    ro.surface_flinger.set_touch_timer_ms=200 \
-    ro.surface_flinger.use_color_management=true \
-    ro.surface_flinger.wcg_composition_dataspace=143261696
-
-# External modem
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.mdm_helper.fail_action=cold_reset
-
-# Gatekeeper
-PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.gatekeeper.disable_spu=true
 # Sony specific settings
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-sony.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-sony.xml
+
+# Audio
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/audio_effects.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/audio_effects.conf

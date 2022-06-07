@@ -101,3 +101,15 @@ persist.sys.colorgamut.current.mode=1
 
 # Touch
 sys.preactivated.smart_on_display=1
+
+# X-Reality for mobile
+ro.service.xrfm.supported=true
+persist.service.xrfm.mode=1
+
+# 4K for Youtube
+sys.display-size=3840x1644
+
+# Sensors
+persist.vendor.sensors.enable.mag_filter=true
+
+debug.force_no_blanking=true

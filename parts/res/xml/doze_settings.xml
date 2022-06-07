@@ -82,11 +82,4 @@
           </intent>
     </Preference>
 
-    <Preference
-        android:key="loops_gamut"
-        android:title="@string/xperiaxloops_settings_title">
-	    <intent android:targetPackage="com.sonymobile.xperiaxloops" android:action="android.intent.action.MAIN" android:targetClass="com.sonymobile.xperiaxloops.settings.LoopsSettingsActivity" />
-                <extra android:name="android.media.extra.PACKAGE_NAME" android:value="com.android.settings" />
-    </Preference>
-
 </PreferenceScreen>
