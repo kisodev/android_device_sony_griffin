@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2015 The CyanogenMod Project
- *               2017-2018 The LineageOS Project
+ * Copyright (C) 2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,52 +21,39 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.os.SystemClock;
 import android.util.Log;
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class MovementSensor implements SensorEventListener {
-
+public class AodSensor implements SensorEventListener {
     private static final boolean DEBUG = false;
-    private static final String TAG = "MovementSensor";
-
-    private static final int MIN_PULSE_INTERVAL_MS = 2000;
+    private static final String TAG = "AodSensor";
 
     private SensorManager mSensorManager;
     private Sensor mSensor;
     private Context mContext;
     private ExecutorService mExecutorService;
 
-    private long mEntryTimestamp;
-
-    public MovementSensor(Context context) {
+    public AodSensor(Context context) {
         mContext = context;
         mSensorManager = mContext.getSystemService(SensorManager.class);
-        mSensor = DozeUtils.getSensor(mSensorManager, "qti.sensor.amd");
+        mSensor = DozeUtils.getSensor(mSensorManager, "sony.sensor.aod");
         mExecutorService = Executors.newSingleThreadExecutor();
     }
 
-    private Future<?> submit(Runnable runnable) {
-        return mExecutorService.submit(runnable);
-    }
+    private Future<?> submit(Runnable runnable) { return mExecutorService.submit(runnable); }
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        if (DEBUG) Log.d(TAG, "Got sensor event: " + event.values[0]);
-
-        long delta = SystemClock.elapsedRealtime() - mEntryTimestamp;
-
-        if (delta < MIN_PULSE_INTERVAL_MS) {
-            return;
+        if (DEBUG) {
+            Log.d(TAG, "Got sensor event: " + event.values[0]);
         }
 
-        mEntryTimestamp = SystemClock.elapsedRealtime();
-
-        if (event.values[0] == 2) {
-            DozeUtils.launchDozePulse(mContext);
+        if (event.values[0] == 3 || event.values[0] == 5) {
+            DozeUtils.setDozeMode(DozeUtils.DOZE_MODE_LBM);
+        } else if (event.values[0] == 4) {
+            DozeUtils.setDozeMode(DozeUtils.DOZE_MODE_HBM);
         }
     }
 
@@ -77,18 +63,18 @@ public class MovementSensor implements SensorEventListener {
     }
 
     protected void enable() {
-        if (DEBUG) Log.d(TAG, "Enabling");
+        if (DEBUG) {
+            Log.d(TAG, "Enabling");
+        }
         submit(() -> {
-            mEntryTimestamp = SystemClock.elapsedRealtime();
-            mSensorManager.registerListener(this, mSensor,
-                    SensorManager.SENSOR_DELAY_NORMAL);
+            mSensorManager.registerListener(this, mSensor, SensorManager.SENSOR_DELAY_NORMAL);
         });
     }
 
     protected void disable() {
-        if (DEBUG) Log.d(TAG, "Disabling");
-        submit(() -> {
-            mSensorManager.unregisterListener(this, mSensor);
-        });
+        if (DEBUG) {
+            Log.d(TAG, "Disabling");
+        }
+        submit(() -> { mSensorManager.unregisterListener(this, mSensor); });
     }
 }

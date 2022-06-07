@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2015-2016 The CyanogenMod Project
-                   2017-2018 The LineageOS Project
+                   2017-2020 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -28,33 +28,32 @@
 
     <uses-sdk
         android:minSdkVersion="24"
-        android:targetSdkVersion="24"/>
+        android:targetSdkVersion="30" />
 
     <application
         android:label="@string/device_settings_app_name"
         android:persistent="true">
 
-        <receiver android:name=".BootCompletedReceiver">
-            <intent-filter>
+        <receiver android:name=".BootCompletedReceiver" android:exported="false">
+            <intent-filter android:priority="1000">
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
 
         <service android:name=".doze.DozeService"
-         	 android:permission="SonyDozeService"
-                 android:exported="true">
+                 android:permission="SonyDozeService">
         </service>
 
         <activity
             android:name=".doze.DozeSettingsActivity"
-            android:exported="false"
             android:label="@string/ambient_display_title"
+            android:exported="false"
             android:theme="@style/Theme.SubSettingsBase">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
-            <meta-data
+	     <meta-data
 		android:name="com.android.settings.category"
                 android:value="com.android.settings.category.ia.display" />
             <meta-data
@@ -63,5 +62,4 @@
         </activity>
 
     </application>
-
 </manifest>

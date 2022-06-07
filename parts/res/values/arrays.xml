@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2020 The LineageOS Project
+<!--
+     Copyright (C) 2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -13,10 +14,17 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
 <resources>
-    <color name="switchbar_background_color">@*android:color/material_grey_600</color>
-    <color name="switchbar_switch_track_tint">#BFFFFFFF</color>
-    <color name="switchbar_switch_thumb_tint">@android:color/white</color>
+    <string-array name="doze_brightness_level">
+        <item>Low brightness</item>
+        <item>High brightness</item>
+        <item>Zero brightness </item>
+        <item>Adaptive brightness</item>
+    </string-array>
+    <string-array name="doze_brightness_level_mode">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
 </resources>
-
