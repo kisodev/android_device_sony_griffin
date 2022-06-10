@@ -154,8 +154,6 @@ PRODUCT_PACKAGES += \
 
 # HIDL
 PRODUCT_PACKAGES += \
-    libhidltransport \
-    libhwbinder \
     libqti_vndfwk_detect
 
 # Input
@@ -249,11 +247,6 @@ PRODUCT_PACKAGES += \
 # WiFi Display
 PRODUCT_PACKAGES += \
     libnl
-
-# hidl
-PRODUCT_PACKAGES += \
-    android.hidl.base@1.0 \
-    android.hidl.manager@1.0
 
 # WiFi Display
 PRODUCT_PACKAGES += \
