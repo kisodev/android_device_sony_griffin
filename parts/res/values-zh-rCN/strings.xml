@@ -19,6 +19,7 @@
         <!-- Smart wake strings-->
     <string name="smart_wake_gesture_title">智能唤醒</string>
     <string name="smart_wake_gesture_summary">当设备轻微运动时显示通知</string>
+    <string name="xperia_settings_title">Xperia</string>
     <string name="color_gamut_title">图像质量设定</string>
     <string name="audio_settings_title">音频设定</string>
 </resources>

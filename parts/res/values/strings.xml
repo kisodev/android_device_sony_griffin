@@ -20,6 +20,7 @@
 
     <string name="doze_brightness_title">Always on brightness</string>
     <string name="doze_brightness_summary">%s mode is enabled</string>
+    <string name="xperia_settings_title">Xperia</string>
     <string name="color_gamut_title">Image quality settings</string>
     <string name="audio_settings_title">Sound Settings</string>
 </resources>

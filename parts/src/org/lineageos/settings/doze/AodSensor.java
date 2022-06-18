@@ -50,11 +50,6 @@ public class AodSensor implements SensorEventListener {
             Log.d(TAG, "Got sensor event: " + event.values[0]);
         }
 
-        if (event.values[0] == 3 || event.values[0] == 5) {
-            DozeUtils.setDozeMode(DozeUtils.DOZE_MODE_LBM);
-        } else if (event.values[0] == 4) {
-            DozeUtils.setDozeMode(DozeUtils.DOZE_MODE_HBM);
-        }
     }
 
     @Override
