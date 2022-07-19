@@ -269,3 +269,14 @@ PRODUCT_COPY_FILES += \
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/audio_effects.conf
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.columbus.model=tap7cls_coral.tflite
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.lmk.filecache_min_kb=153600 \
+    ro.lmk.stall_limit_critical=40
+
+# Pixel Wallpapers (2021)
+PRODUCT_PACKAGES += \
+    PixelWallpapers2021
