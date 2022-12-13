@@ -197,5 +197,7 @@ BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 2
 AVB_VENDOR_DLKM_HASHTREE_ENABLE := false
 AVB_ODM_DLMK_HASHTREE_ENABLE := false
 
+TARGET_EXFAT_DRIVER := texfat
+
 # Inherit from the proprietary version
 -include vendor/sony/griffin/BoardConfigVendor.mk
