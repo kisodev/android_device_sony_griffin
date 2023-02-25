@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/evolution_griffin.mk
+    $(LOCAL_DIR)/lineage_griffin.mk
 
 COMMON_LUNCH_CHOICES := \
-    evolution_griffin-user \
-    evolution_griffin-userdebug \
-    evolution_griffin-eng
+    lineage_griffin-user \
+    lineage_griffin-userdebug \
+    lineage_griffin-eng
