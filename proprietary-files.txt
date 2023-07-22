@@ -629,8 +629,6 @@ vendor/camera/snapshot.dat
 vendor/camera/streaming.dat
 vendor/camera/supported.dat
 vendor/camera/version.dat
-vendor/lib/camera/com.sony.sensormodule.vulture_imx563.bin
-vendor/lib/camera/com.sony.sensormodule.vulture_s5k3m3.bin
 
 # Charger
 vendor/etc/chg-pwr-service.cfg
