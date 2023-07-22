@@ -4,6 +4,6 @@
 //
 
 runtime_resource_overlay {
-    name: "SonyBahamutFrameworksRes",
+    name: "SonyGriffinFrameworksRes",
     vendor: true,
 }

@@ -26,12 +26,12 @@
 $(call inherit-product, device/sony/sm8150-common/common.mk)
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 2520
-TARGET_SCREEN_WIDTH := 1080
+TARGET_SCREEN_HEIGHT := 3840
+TARGET_SCREEN_WIDTH := 1644
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
 
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
@@ -39,8 +39,8 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    SonyBahamutFrameworksRes \
-    SonyBahamutSystemUIRes
+    SonyGriffinFrameworksRes \
+    SonyGriffinSystemUIRes
 
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
@@ -50,4 +50,4 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gpio-keys.kl
 
 # Inherit from vendor blobs
-$(call inherit-product, vendor/sony/bahamut/bahamut-vendor.mk)
+$(call inherit-product, vendor/sony/griffin/griffin-vendor.mk)

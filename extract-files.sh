@@ -15,7 +15,7 @@ fi
 set -e
 
 # Required!
-export DEVICE=bahamut
+export DEVICE=griffin
 export DEVICE_COMMON=sm8150-common
 export VENDOR=sony
 

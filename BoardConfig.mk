@@ -17,15 +17,15 @@
 # Inherit from sony sm8150-common
 -include device/sony/sm8150-common/BoardConfigCommon.mk
 
-DEVICE_PATH := device/sony/bahamut
+DEVICE_PATH := device/sony/griffin
 
 # Display
 TARGET_SCREEN_DENSITY := 420
 
-BOARD_KERNEL_CMDLINE += buildproduct=bahamut
+BOARD_KERNEL_CMDLINE += buildproduct=griffin
 
 TARGET_KERNEL_SOURCE := kernel/sony/sm8150
-TARGET_KERNEL_CONFIG := bahamut_defconfig
+TARGET_KERNEL_CONFIG := griffin_defconfig
 
 BOARD_MKBOOTIMG_ARGS += --base $(BOARD_KERNEL_BASE)
 BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE)
@@ -39,4 +39,4 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # inherit from the proprietary version
--include vendor/sony/bahamut/BoardConfigVendor.mk
+-include vendor/sony/griffin/BoardConfigVendor.mk

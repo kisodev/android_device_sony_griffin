@@ -8,7 +8,7 @@
 
 set -e
 
-export DEVICE_COMMON=bahamut
+export DEVICE_COMMON=griffin
 export DEVICE_COMMON=sm8150-common
 export VENDOR=sony
 
