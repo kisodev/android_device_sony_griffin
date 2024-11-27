@@ -7,9 +7,6 @@ vendor/etc/acdbdata/Sony_kumano_Headset_cal.acdb
 vendor/etc/acdbdata/Sony_kumano_Speaker_cal.acdb
 vendor/etc/acdbdata/workspaceFile_Sony_kumano.qwsp
 
-# ATFWD
-vendor/bin/ATFWD-daemon
-
 # Audio extensions
 vendor/lib/libhdmipassthru.so
 vendor/lib64/libhdmipassthru.so
