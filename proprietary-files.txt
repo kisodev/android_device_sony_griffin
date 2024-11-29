@@ -30,10 +30,6 @@ vendor/etc/sony_effect/znr_48k_WideCam.tbl
 vendor/etc/sony_effect/znr_48k_defaultCam.tbl
 vendor/etc/sony_effect/znr_parameter.xml
 
-# Bluetooth
-vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
-vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
-
 # Cacaoserver
 vendor/lib/libcacao_process_ctrl.so
 
@@ -660,10 +656,6 @@ vendor/etc/qdcm_calib_data_2.xml
 
 # Display (HDR)
 vendor/etc/libhdr_somc.xml
-vendor/lib64/libhdr_tm.so
-
-# GNSS
-vendor/bin/slim_daemon
 
 # Graphics (Adreno firmware)
 vendor/firmware/a612_rgmu.bin
@@ -675,9 +667,6 @@ vendor/firmware/a640_zap.b00
 vendor/firmware/a640_zap.b01
 vendor/firmware/a640_zap.b02
 vendor/firmware/a640_zap.mdt
-
-# Keyprov
-vendor/bin/keyprovd
 
 # Illumination
 vendor/bin/hw/illumination_service
@@ -697,27 +686,8 @@ vendor/firmware/ipa_uc.b02
 vendor/firmware/ipa_uc.elf
 vendor/firmware/ipa_uc.mdt
 
-# Modem
-vendor/bin/mlog_qmi_service
-
-# Qseecomd
-vendor/bin/qseecomd
-
-# Qteeconnector
-vendor/bin/pd-mapper
-vendor/bin/rmt_storage
-
-# SCT QMI service
-vendor/bin/sct_service
-
-# SECD
-vendor/bin/hw/vendor.semc.hardware.secd@1.0-service
-
 # Sensor configs
 vendor/etc/sensors/registry/config/msmnile_ak991x_0_somc_product.json
-
-# TA QMI
-vendor/bin/ta_qmi_service
 
 # Thermal configs
 vendor/etc/change.cfg
